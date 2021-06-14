@@ -12,4 +12,14 @@ import "../styles/index.scss";
 import { Home } from "./component/home.js";
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
+/* ReactDOM.render(<Home />, document.querySelector("#app")); */
+import { SecondsCounter } from "./component/home.js";
+
+let counter = 0;
+setInterval(function() {
+	ReactDOM.render(
+		<SecondsCounter seconds={counter} />,
+		document.getElementById("app")
+	);
+	counter += 1;
+}, 1000);
